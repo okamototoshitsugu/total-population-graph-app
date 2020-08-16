@@ -36,7 +36,7 @@ export default {
   */
   plugins: [
     {
-      src: '~/plugins/highcharts.js',
+      src: '~/plugins/highcharts-vue.js',
       ssr: false
     }
   ],
@@ -56,6 +56,7 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    'bootstrap-vue/nuxt'
   ],
   /*
   ** Axios module configuration
