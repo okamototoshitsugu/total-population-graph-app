@@ -1,16 +1,16 @@
 <template>
-<div>
+<div class="container">
     <h1>
       都道府県別<br>総人口推移グラフ
     </h1>
     <form>
-      <label>都道府県</label>
-      <b-form-checkbox-group v-model="checkedPrefCodes">
+      <label class="label">都道府県</label>
+      <b-form-checkbox-group v-model="checkedPrefCodes" class="checkboxes">
         <b-form-checkbox
           v-for="prefecture in prefectures"
           :key="prefecture.prefCode"
           :value="prefecture.prefCode"
-          class=""
+          class="checkbox"
         >
           {{ prefecture.prefName }}
         </b-form-checkbox>
@@ -126,5 +126,39 @@ export default {
 
 
 <style>
+.container {
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
 
+.label {
+   display: block;
+   padding-top: 25px;
+   padding: 0.5em 1em;
+   margin: 2em 0;
+   font-weight: bold;
+   border: solid 3px #000000;
+   width: 110px;
+}
+
+.checkboxes {
+  display: flex;
+  max-width: 640px;
+  padding-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.custom-control-label {
+   width: 90px;
+   text-align: left;
+}
+
+form {
+  padding-left: 200px;
+}
 </style>
